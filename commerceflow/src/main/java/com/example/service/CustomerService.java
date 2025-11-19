@@ -63,7 +63,7 @@ public class CustomerService {
         List<Customer> list = repo.findAll(sort);
 
         if (name != null && !name.isBlank()) {
-        	System.out.println("re---------------");
+        
             return list.stream()
                     .filter(c ->
                             c.getFirstName().toLowerCase().contains(name.toLowerCase())
