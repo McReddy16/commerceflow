@@ -1,6 +1,6 @@
 
 
-# 🔐 Authentication Module (`authenaction` Branch)
+# 🔐 Authentication Module 
 
 This branch contains the full authentication implementation for CommerceFlow using **JWT tokens**.
 It isolates all security logic away from the main application so `main` stays clean and business-focused.
