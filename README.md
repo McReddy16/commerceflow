@@ -1,9 +1,4 @@
-Below is a **clean, professional, GitHub-ready README content specifically for your `authenaction` branch**.
-It clearly explains purpose, structure, JWT config, flow, and endpoints.
 
-You can paste this directly into your branch-level README.
-
----
 
 # 🔐 Authentication Module (`authenaction` Branch)
 
