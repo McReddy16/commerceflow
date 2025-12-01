@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.dto.CustomerCreateDTO;
+
 import com.example.dto.CustomerDTO;
 import com.example.dto.CustomerUpdateDTO;
 import com.example.service.CustomerService;
@@ -13,6 +14,16 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.util.List;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.security.SecurityScheme;
+
+
+
+
+
 
 @RestController
 @RequestMapping("/api/customers")
@@ -64,11 +75,17 @@ public class CustomerController {
     ) {
         return ResponseEntity.ok(svc.update(id, dto));
     }
+   
 
-    // DELETE
+
+    @Operation(
+            summary = "Delete customer by ID",
+            security = @SecurityRequirement(name = "bearerAuth")
+    )
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         svc.delete(id);
         return ResponseEntity.noContent().build();
     }
 }
+
